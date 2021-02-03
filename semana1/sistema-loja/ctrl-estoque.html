@@ -4,66 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Controle de Estoque</title>
 </head>
 <body>
-    <div>
-        <p>Lojinha do BBB</p>
-    </div>
-    
-    <div>
+    <div class="header">
+        <center><img class="logo" src="/img/logo.png"></center>
+   <br>
+   <center>
+       <div class="botoes">
         <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html  ">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
+        <a id= "controle" href="ctrl-estoque.html">Controle de Estoque</a>
+        <a id= "produto" href="add-produto.html">Adicionar Produto</a>
+        <a href="funcionarios.html">Funcionários</a></div>
+    </center>
     </div>
 
-    <h2>Controle de Estoque</h2>
-
-    <table>
+    <center>
+    <h2 class="titulos">Controle de Estoque</h2>
+    
+    <table class="tabela">
         <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
+            <th class="legenda">Foto</th>
+            <th class="legenda">Descrição</th>
+            <th class="legenda">Preço (R$)</th>
+            <th class="legenda">Quantidade disponível</th>
         </tr>
 
         <tr>
-            <td><img src="" alt=""/></td>
-            <td> Big Fone </td>
-            <td> R$200 </td>
-            <td> 2 </td>
+            <td><img class="estoque" src="img/fone.jpg" alt="Telefone azul na parede"/></td>
+            <td class="infos"> Big Fone </td>
+            <td class="infos"> R$200 </td>
+            <td class="infos"> 2 </td>
         </tr>
 
         <tr>
-            <td><img src="img/roupão.jpeg" alt="Roupão vermelho com o logo do BBB e uma coroa bordados em amarelo"/></td>
-            <td> Roupão do Líder </td>
-            <td> R$300 </td>
-            <td> 1 </td>
+            <td><img class="estoque" src="img/roupão.jpeg" alt="Roupão vermelho com o logo do BBB e uma coroa bordados em amarelo"/></td>
+            <td class="infos"> Roupão do Líder </td>
+            <td class="infos"> R$300 </td>
+            <td class="infos"> 1 </td>
         </tr>
 
         <tr>
-            <td><img src="img/coroa.png" alt="Coroa dourada com pedrarias"/></td>
-            <td> Coroa do líder </td>
-            <td> R$20000 </td>
-            <td> 1 </td>
+            <td><img class="estoque" src="img/coroa.png" alt="Coroa dourada com pedrarias"/></td>
+            <td class="infos"> Coroa do líder </td>
+            <td class="infos"> R$20000 </td>
+            <td class="infos"> 1 </td>
         </tr>
 
         <tr>
-            <td><img src="img/anjo.jpg" alt="Colar dourado com um pingente de anjo"/></td>
-            <td> Colar do Anjo </td>
-            <td> R$5000 </td>
-            <td> 1 </td>
+            <td><img class="estoque" src="img/anjo.jpg" alt="Colar dourado com um pingente de anjo"/></td>
+            <td class="infos"> Colar do Anjo </td>
+            <td class="infos"> R$5000 </td>
+            <td class="infos"> 1 </td>
         </tr>
 
         <tr>
-            <td><img src="img/monstro.jpg" alt="Colar preto com pingente bronze de caveira com asas"/></td>
-            <td> Colar do Monstro</td>
-            <td> R$0 </td>
-            <td> 2 </td>
+            <td><img class="estoque" src="img/monstro.jpg" alt="Colar preto com pingente bronze de caveira com asas"/></td>
+            <td class="infos"> Colar do Monstro</td>
+            <td class="infos"> R$0 </td>
+            <td class="infos"> 2 </td>
         </tr>
 
     </table>
-
+    </center>
+    
 </body>
 </html>
