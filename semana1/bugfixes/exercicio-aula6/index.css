@@ -135,6 +135,11 @@ td button {
     height: 100px;
 }
 
+.box {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
 
 #back-button {
     background-color: white;
