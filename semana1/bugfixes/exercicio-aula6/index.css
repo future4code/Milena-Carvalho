@@ -71,10 +71,15 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+}
+
+#chamada {
+    font-size: 18px;
 }
 
 #container-para-comprar {
@@ -87,6 +92,9 @@ div img {
     font-size: 60px;
 }
 
+li.closed {
+    list-style-type: disc;
+}
 
 /**
   *
