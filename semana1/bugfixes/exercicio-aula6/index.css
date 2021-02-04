@@ -76,6 +76,7 @@ div img {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    list-style-position: inside;
 }
 
 #chamada {
@@ -92,10 +93,6 @@ div img {
     font-size: 60px;
 }
 
-li.closed {
-    list-style-type: disc;
-}
-
 /**
   *
   *  ESTILOS COMPRAR 
@@ -109,6 +106,8 @@ div:last-child {
 
 table {
     width: 60%;
+    margin:auto;
+    background-color: #2274a5;
 }
 
 td button {
