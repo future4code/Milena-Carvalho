@@ -309,7 +309,7 @@
 #garden {
     display: grid;
     grid-template-columns: 75px 3fr 2fr;
-    linhas de modelo de grade: 100%;
+    grid-template-rows: 100%;
 }
 
 /* Level 26 */
