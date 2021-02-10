@@ -5,6 +5,10 @@ body{
     overflow-x: hidden;
 }
 
+.video {
+    border: none;
+}
+
 /* header */ 
 .containerheader {
     display: grid;
@@ -51,7 +55,7 @@ header {
 }
 
 .botaobusca {
-    background-color: red;
+    background-color: rgb(240, 240, 240);
     height: 42.5px;
     width: 42.5px;
     border: none;
@@ -81,27 +85,139 @@ header {
 .containerdestaque {
     display: grid;
     width: 70vw;
-    height: 75vh;
+    height: 50vh;
     margin: auto;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
+
+
+/*coluna 1*/ 
 
 .coluna1 {
     padding-right: 15px;
-}
-
-.coluna1 p {
-    background-color: tomato;
     margin: 0;
 }
 
+
+.coluna1 div {
+    height: 100%;
+    border: none;
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+}
+
+.coluna1 p {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    color: black;
+    
+}
+
+
+/*coluna 2*/ 
+
 .coluna2 {
     display: flex;
-    justify-content: space-between;
     flex-flow: column;
     padding-left: 15px;
 }
 
+.coluna2 p {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    margin-left: 10px;
+}
+
 .coluna2 div {
     display: flex;
+    height: 100%;
+    border: none;
+    background-color: rgb(240, 240, 240);
+    margin: 0;
+}
+
+/* todos os vídeos */ 
+
+.titulovideo {
+    display: flex;
+    flex-flow: column;
+    width: 70vw;
+    height: 20vh;
+    margin: auto;
+    justify-content: center;
+}
+
+.titulovideo a {
+    color: gray;
+}
+
+.containervideos {
+    display: grid;
+    width: 70vw;
+    height: 60vh;
+    margin: auto;
+    grid-template-columns: 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
+}
+
+.coluna3 {
+    margin: 0;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 3vh;
+}
+
+.coluna3 a {
+    text-decoration: none;
+}
+
+.coluna3 p {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+}
+
+/* mais vídeos */ 
+
+.maisvideos {
+    display: grid;
+    width: 70vw;
+    height: 30vh;
+    margin: auto;
+    grid-template-columns: 5fr 1fr 5fr 1fr 5fr 1fr 5fr;
+}
+
+.video1 {
+    width: 100%;
+} 
+
+.containerfull {
+    display: grid;
+    width: 70vw;
+    height: 100vh;
+    margin: auto;
+}
+
+.colunafull {
+    display: flex;
+    padding-right: 15px;
+    margin: 0;
+    width: 100%;
+}
+
+/* Footer */
+
+.containerfooter {
+    display: flex;
+    width: 70vw;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
+}
+
+footer {
+    background-color: black;
 }
