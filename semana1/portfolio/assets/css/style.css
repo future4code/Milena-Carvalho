@@ -1,0 +1,193 @@
+body{
+    min-height: 100vh;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #0D0D0D;
+    overflow-x: hidden;
+}
+
+/* container */ 
+
+.container {
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto
+}
+
+/* header */
+
+header {
+    background-color: #000000;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,1);
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,1);
+}
+
+.containerheader {
+    display: flex;
+    width: 70vw;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto
+}
+
+.containerbanner {
+    display: flex;
+    width: 70vw;
+    height: 80vh;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto
+}
+
+.logo { 
+    height: 100px;
+
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 60px;
+}
+
+/* banner */
+
+.textochamada {
+    color: white;
+    font-size: 50px;
+    font-weight: normal;
+}
+
+.hrbanner {
+    height: 0.5px;
+    width: 10px;
+    display: flex;
+    float: left;
+    background: #E00070;
+    border: 0.5px solid #E00070;
+}
+
+.subtitulochamada{
+    color: white;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 50px;
+}
+
+.textorosa {
+    color: #E00070;
+}
+
+.textonegrito {
+    font-weight:700!important;
+}
+
+.minhafoto {
+    max-width: 40%;
+}
+
+/* sobre mim */
+
+.containertítulosobremim {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.titulosobremim {
+    width: 50%;
+    margin-top: 150px;
+}
+
+.titulosobremim h2 {
+    color: white;
+    font-size: 40px;
+    text-align: right;
+    font-weight: normal;
+}
+
+.hrtitulo {
+    height: 0.5px;
+    background: #E00070;
+    border: 0.5px solid #E00070;
+}
+
+.containersobremim {
+    display: flex;
+    width: 85vw;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 15vw;
+
+    margin-top: 100px;
+    background-image: linear-gradient(to right, #0d0d0d 40%, black 40%)
+}
+
+.sobremim {
+    width:  40%;
+}
+
+.sobremimtexto {
+    color: white;
+    margin-right: 15vw;
+    margin-left: 100px;
+    font-size: 25px;
+    text-align: right;
+}
+
+/* Projetos */
+
+.containertituloprojeto {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content:flex-end;
+    margin: auto;
+    margin-top: 200px;
+}
+
+.tituloprojetos {
+    width: 50%;
+}
+
+.tituloprojetos h2 {
+    color: white;
+    font-size: 40px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.hrtitulo {
+    height: 0.5px;
+    background: #E00070;
+    border: 0.5px solid #E00070;
+}
+
+.containerprojeto {
+    display: flex;
+    width: 70vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto; 
+    margin-top: 100px;
+}
+
+.caixa {
+    width: 32vw;
+    height: 35vh;
+    border: 4px solid white;
+}
+
+.margem {
+    margin-top: 10vh;
+}
