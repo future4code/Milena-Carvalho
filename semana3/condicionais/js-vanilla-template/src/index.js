@@ -32,7 +32,7 @@
         console.log ("Bom dia!")
     } else if (turno === "V") {
         console.log ("Boa tarde!")
-    } else (turno === "N") {
+    } else {
         console.log ("Boa noite!")
     }
 
