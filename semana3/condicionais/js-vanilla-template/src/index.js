@@ -54,4 +54,9 @@
     }
 
 // Exercício 7 
-    const 
+    const filme = prompt("Qual o gênero do filme")
+    const valor = Number (prompt("Qual o valor do ingresso?"))
+    if (filme === "fantasia" && valor < 15) {
+        console.log ("Bom filme")
+    } else { console.log ("Escolha outro filme :(")
+}   
