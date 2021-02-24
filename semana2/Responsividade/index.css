@@ -1,0 +1,123 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+#first-block {
+    background-color: red;
+    height: 10vh;
+    margin-bottom: 1vh;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Container colorido */ 
+
+.container-6 {
+    display: flex;
+    width: 95vw;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+}
+
+.col-color {
+    height: 15vh;
+    width: 30vw;
+}
+
+.blue-block {
+    background-color: blue;
+}
+
+.yellow-block {
+    background-color: yellow;
+}
+
+.green-block {
+    background-color: green;
+}
+
+.bot {
+    margin-top: 5vh;
+}
+
+/* Container preto */
+
+.container-black {
+    display: flex;
+    width: 95vw;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    height: 30vh;
+    width: 46vw;
+}
+
+/* Container branco */
+
+.container-white {
+    display: flex;
+    width: 95vw;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 5vh;
+    flex-wrap: wrap;
+}
+
+.white-block {
+    background-color: white;
+    height: 15vh;
+    width: 30vw;
+    border: 1px solid black;
+}
+
+@media screen and (max-width: 800px){
+
+    .container-white, .container-6, .container-black {
+        margin: 0;
+    }
+
+    .col-color, .black-block, .white-block {
+        width: 100%;
+        margin: 1vh;
+    }
+
+      }
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    
+    .container-6, .container-black, .container-white {
+        margin: auto;
+        margin-top: 0;
+    }
+    
+    .col-color, .black-block, .white-block {
+        margin-top: 2vh;
+    }
+
+    .col-color:nth-of-type(1), .col-color:nth-of-type(2), .col-color:nth-of-type(4), .col-color:nth-of-type(5), .white-block:nth-of-type(1), .white-block:nth-of-type(2) {
+        width: 47%;
+    }
+
+    .col-color:nth-of-type(3), .col-color:nth-of-type(6),  .white-block:nth-of-type(3) {
+        width: 100%;
+    }
+
+    .black-block {
+        width: 47%;
+        height: 60vh;
+    }
+}
