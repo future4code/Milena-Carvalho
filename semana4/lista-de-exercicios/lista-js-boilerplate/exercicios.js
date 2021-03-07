@@ -1,7 +1,8 @@
 //Exercício 1
 
 function inverteArray(array) {
-  // implemente sua lógica aqui
+  // A partir dos arrays já declarados, utilizei a função reverse do javascript para retorná-los invertidos. 
+  return array.reverse()
 }
 
 //Exercício 2
