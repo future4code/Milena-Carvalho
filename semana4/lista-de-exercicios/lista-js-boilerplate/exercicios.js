@@ -279,8 +279,8 @@ const consultas = [
   { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
   ]
 
-function retornaEmailConsulta(consultas) {
-  // implemente sua lógica aqui
+function retornaEmailConsulta() {
+   // implemente sua lógica aqui
 }
 
 //Exercício 20
@@ -295,5 +295,14 @@ const contas = [
 ]
 
 function atualizaSaldo() {
-  // implemente sua lógica aqui
+  for (let i = 0; i < contas.length; i++) {
+     let saldo = contas[i].saldoTotal 
+     let compras = 0 
+     for (let j = 0; j < contas[i].compras.length; j++) {
+         compras = compras + contas[i].compras[j]
+     }
+     saldo = saldo - compras
+     contas[i].saldoTotal = saldo
+  }
+  return contas
 }
