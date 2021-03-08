@@ -202,7 +202,11 @@ function menoresDe18(arrayDePessoas) {
 // Exercício 17, letra A
 
 function multiplicaArrayPor2(array) {
-   // implemente sua lógica aqui
+   let multiplos = []
+   for (let  i = 0; i < array.length; i++) {
+      multiplos.push (array[i]*2)
+   }
+   return multiplos
 }
 
 // Exercício 17, letra B
