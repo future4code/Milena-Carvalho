@@ -46,7 +46,8 @@ function retornaMaiorNumero(array) {
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
-   // implemente sua lógica aqui
+   // Utilizei a propriedade array.length que retorna o tamanho de um array. 
+   return array.length
 }
 
 //Exercício 6
