@@ -212,7 +212,11 @@ function multiplicaArrayPor2(array) {
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
-  // implemente sua lógica aqui
+  let multiplos = []
+  for (let  i = 0; i < array.length; i++) {
+     multiplos.push ("" + array[i]*2 +"")
+  }
+  return multiplos
 }
 
 // Exercício 17, letra C
