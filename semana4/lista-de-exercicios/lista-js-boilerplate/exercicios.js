@@ -21,7 +21,14 @@ function retornaNumerosParesElevadosADois (array) {
 //Exercício 3
 
 function retornaNumerosPares (array) {
-   // implemente sua lógica aqui
+   // Primeiro criei um array auxiliar para armenizar os resultados. Em seguida, criei um laço de repetição que buscou somente os número pares e, então, amarzenou os resultados no array auxiliar criado. 
+   let arrayPares = [] 
+   for (let i = 0; i < array.length; i++) {
+      if(array[i] % 2 === 0) {
+         arrayPares.push(array[i])
+      }
+   }
+   return arrayPares
 }
 
 //Exercício 4
