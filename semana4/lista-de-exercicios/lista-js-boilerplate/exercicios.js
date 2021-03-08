@@ -178,13 +178,25 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   let adultos = []
+   for (let i = 0; i < arrayDePessoas.length; i++ ){
+      if (arrayDePessoas[i].idade >= 20) {
+         adultos.push(arrayDePessoas[i])
+      }
+   }
+   return adultos
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   let criancas = []
+   for (let i = 0; i < arrayDePessoas.length; i++ ){
+      if (arrayDePessoas[i].idade < 20) {
+         criancas.push(arrayDePessoas[i])
+      }
+   }
+   return criancas
 }
 
 // Exercício 17, letra A
