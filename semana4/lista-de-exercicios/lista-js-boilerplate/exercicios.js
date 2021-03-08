@@ -8,7 +8,14 @@ function inverteArray(array) {
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aqui
+   // Primeiro criei um array auxiliar para armenizar os resultados. Em seguida, criei um laço de repetição que buscou somente os pares sob a condição de múltiplicar estes números pares por eles mesmos e, então, amarzenar os resultados no array auxiliar criado. 
+   let arrayPares = [] 
+   for (let i = 0; i < array.length; i++) {
+      if(array[i] % 2 === 0) {
+         arrayPares.push(array[i] * array[i])
+      }
+   }
+   return arrayPares
 }
 
 //Exercício 3
