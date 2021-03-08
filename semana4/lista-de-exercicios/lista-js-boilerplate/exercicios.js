@@ -34,7 +34,13 @@ function retornaNumerosPares (array) {
 //Exercício 4
 
 function retornaMaiorNumero(array) {
-   // implemente sua lógica aqui
+   // Primeiro declarei uma variável para iniciar o laço de repetição que verificará se o elemento atual amarzenado em let maior segue sendo maior em relação ao elemento array[i] atual. Caso o array[i] for maior que o let maior, ele será atribuído como valor de let maior. 
+   let maior = array [0]
+   for (let i = 1; i < array.length; i++)
+   if (array[i] > maior) {
+      maior = array [i]
+   }
+   return maior
 }
 
 //Exercício 5
