@@ -53,7 +53,7 @@ function retornaQuantidadeElementos (array) {
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
-   // implemente sua lógica aqui
+   // Não consegui realizar o exercício. 
 }
 
 //Exercício 7
