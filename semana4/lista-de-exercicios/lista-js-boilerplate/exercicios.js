@@ -246,14 +246,21 @@ const pessoas = [
 
 //Exercício 18, letra A
 
-function retornaPessoasAutorizadas(pessoas) {
-   // implemente sua lógica aqui
+function retornaPessoasAutorizadas() {
+   
+   let liberados = []
+   for (let i = 0; i < pessoas.length; i++){
+      if (pessoas[i].idade >= 14 && pessoas[i].altura >= 1.5 && pessoas[i].idade <= 60) {
+         liberados.push(pessoas[i])
+      }
+   }
+   return liberados
 }
 
 
 // Exercício 18, letra B
 
-function retornaPessoasNaoAutorizadas(pessoas) {
+function retornaPessoasNaoAutorizadas() {
    // implemente sua lógica aqui
 }
 
