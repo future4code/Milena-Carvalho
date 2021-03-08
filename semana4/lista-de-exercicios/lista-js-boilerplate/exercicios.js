@@ -222,7 +222,15 @@ function multiplicaArrayPor2S(array) {
 // Exercício 17, letra C
 
 function verificaParidade(array) {
-   // implemente sua lógica aqui
+   let multiplos = []
+   for (let  i = 0; i < array.length; i++) {
+      if (array [i] % 2 === 0) {
+         multiplos.push (array[i] + " é par")
+      } else {
+         multiplos.push (array[i] + " é ímpar")
+      }
+   }
+   return multiplos
 }
 
 // Exercício 18
