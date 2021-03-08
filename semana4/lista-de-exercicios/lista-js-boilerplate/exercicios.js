@@ -59,7 +59,13 @@ function retornaExpressoesBooleanas() {
 //Exercício 7
 
 function retornaNNumerosPares(n) {
-   // implemente sua lógica aqui
+   // Primeiro declarei a variável númeroPares para armazer o resultado do exercício. Em seguida, criei um um laço de repetição que utiliza o i como contador que parte do número 0 e vai até o dobro de n (que irá até o último número par além do que queremos chegar). Em seguida, o sistema verifica todos os números e adicionar somente os pares no array. 
+   let numerosPares = []
+   for (let i = 0; i < n*2; i++)
+   if (i % 2 === 0) {
+      numerosPares.push(i)
+   }
+   return numerosPares
 }
 
 // Exercício 8
