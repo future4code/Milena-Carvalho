@@ -1,17 +1,20 @@
 import React from 'react';
 import './App.css';
+import CardProfile from './components/CardProfile/CardProfile';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
+import FotoPerfil from './imgs/profile.jpg';
 
 function App() {
   return (
     <div className="App">
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
-        <CardGrande 
-          imagem="https://uploads-ssl.webflow.com/5d640f4558306be99cf47a0e/5dd57846babb597b77c6bb1d_PerfilFuture4_cor.png" 
-          nome="Astrodev" 
-          descricao="Oi, eu sou o Astrodev. Sou o chefe dos alunos da Labenu. Adoro pedir e-mails na sexta-feira e esperar os alunos responderem só para responder com uma bronca e dar mais trabalho para eles."
+        <CardProfile 
+          imagem={FotoPerfil} 
+          nome="Milena Cacau" 
+          subtitulo= "Sou pedagoga, designer web e estudante de programação."
+          descricao="Me compreendo e atuo de forma flexível e dinâmica, estando sempre aberta às novas estratégias e práticas que atendam os processos de construção e desconstrução que envolvem desde a elaboração de um projeto à aplicação prática de uma ideia. Por isso, busco continuamente estar atenta às demandas, aprendendo com elas e traçando diferentes formas de auxiliar no desenvolvimento dos projetos que faço parte e dos profissionais que convivo diariamente."
         />
         
         <ImagemButton 
