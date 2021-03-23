@@ -6,10 +6,12 @@ import {Link} from 'react-router-dom'
 class ListaUsuarios extends Component {
     
     state={
-        listaDeUsuarios: {}
+        listaDeUsuarios: {},
+        carregando: true
     }
 
     listaAtualizada(){
+        this.setState({carregando: true})
         var axios = require('axios');
 
         var config = {
@@ -21,7 +23,7 @@ class ListaUsuarios extends Component {
         };
         axios(config)
         .then(function (response) {
-            this.setState({listaDeUsuarios: response.data})
+            this.setState({listaDeUsuarios: response.data, carregando: false})
         }.bind(this))
         .catch(function (error) {
             console.log(error);
@@ -29,11 +31,10 @@ class ListaUsuarios extends Component {
     }
 
     componentDidMount(){
+        console.log('montou')
         this.listaAtualizada()
     }
-
     
-
     deletarUsuario = (id) => {
         var axios = require('axios');
 
@@ -64,6 +65,7 @@ class ListaUsuarios extends Component {
                     
                     <div className="boxTitulo">
                         <p>Lista de Usuários</p>
+                        <label>{this.state.horario}</label>
                     </div>
                     
                     <div className="listaUsuarios"> 
@@ -76,7 +78,9 @@ class ListaUsuarios extends Component {
                                         <label>{usuario.name}</label>
                                         <button onClick={() => this.deletarUsuario(usuario.id)}>Deletar Usuário</button>
                                     </div>
-                                )) : 'Carregando...'
+                                )) : (
+                                    this.state.carregando ? 'Carregando...' : 'Não há usuários cadastrados.'
+                                )
                             }
                         </div>
                     
