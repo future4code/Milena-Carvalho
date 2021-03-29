@@ -128,6 +128,16 @@ const IconesPlaylist = styled.div`
     z-index: 22;
 `
 
+const BotaoIcone = styled.button`
+    background-color: transparent;
+    outline: none;
+    border: none;
+    &:focus {
+        border: none;
+        outline: none;
+    }
+`
+
 const IconePequeno = styled.img`
     width: 35px;
 `
@@ -204,8 +214,31 @@ class TodasPlaylists extends React.Component {
             this.retornarPlaylist()
         })
         .catch(function (error) {
-        console.log(error);
+            alert('Crie uma playlist válida.');
         });
+    }
+
+    deletarPlaylist = (id) => {
+        var axios = require('axios');
+
+        var config = {
+        method: 'delete',
+        url: 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/'+id,
+        headers: { 
+            'Authorization': 'milena-carvalho-cruz'
+        }
+        };
+    
+    if (window.confirm("Tem certeza que deseja excluir esta playlist?")) {
+            axios(config)
+            .then((response) => {
+                alert('Playlist removida!')
+                this.retornarPlaylist()
+            })
+            .catch(function (error) {
+            console.log(error);
+            });
+        }
     }
 
     retornarPlaylist = () => {
@@ -218,11 +251,9 @@ class TodasPlaylists extends React.Component {
             'Authorization': 'milena-carvalho-cruz'
         }
         };
-
         axios(config)
         .then(function (response) {
-            this.setState({playlists: response.data.result.list})
-            console.log(this.state.playlists)    
+            this.setState({playlists: response.data.result.list})   
         }.bind(this))
         .catch(function (error) {
         console.log(error);
@@ -253,7 +284,7 @@ class TodasPlaylists extends React.Component {
                                     <IconesPlaylist>   
                                         <IconePequeno src={Mais}/>
                                         <IconeGrande src={Play}/>
-                                        <IconePequeno src={Lixo}/>
+                                        <BotaoIcone onClick={() => this.deletarPlaylist(playlist.id)}><IconePequeno src={Lixo}/></BotaoIcone>
                                     </IconesPlaylist>
                                     <ImagemPlaylist src={`https://picsum.photos/400/?random=${i}`}/>
                                 </DivImagemPlaylist>
