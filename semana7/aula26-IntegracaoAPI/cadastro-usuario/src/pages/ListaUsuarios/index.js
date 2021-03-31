@@ -36,6 +36,8 @@ class ListaUsuarios extends Component {
     }
     
     deletarUsuario = (id) => {
+        if(window.confirm("Tem certeza de que deseja deletar este usuário?")){
+      
         var axios = require('axios');
 
         var config = {
@@ -55,6 +57,7 @@ class ListaUsuarios extends Component {
             alert('Erro ao deletar o usuário.')
         });
 
+        }
     }
 
     render (){
@@ -76,6 +79,7 @@ class ListaUsuarios extends Component {
                                 this.state.listaDeUsuarios.map((usuario) => (
                                     <div>
                                         <label>{usuario.name}</label>
+                                        <Link to={{pathname:'/pagina-de-usuario', state: {idUsuario: usuario.id, nomeUsuario: usuario.name}}}><button className="botao">Ver Perfil</button></Link>
                                         <button onClick={() => this.deletarUsuario(usuario.id)}>Deletar Usuário</button>
                                     </div>
                                 )) : (
@@ -95,7 +99,7 @@ class ListaUsuarios extends Component {
 
 
         )
-
+  
     }
 }
 

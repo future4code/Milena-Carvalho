@@ -74,8 +74,6 @@ class CadastroUsuario extends Component {
                 </div>
                 
             </div>
-
-
         )
 
     }
