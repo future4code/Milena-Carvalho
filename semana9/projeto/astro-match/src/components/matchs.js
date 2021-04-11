@@ -11,6 +11,10 @@ const BoxMatchs = styled.div`
     display: flex;
     flex-flow: column;
     align-items: center;
+
+    @media(max-width: 1024px) {
+        width: ${props.largura ? '80vw' : '0vw'}
+    }
 `
 
 const Matchs = styled.div`
@@ -45,19 +49,26 @@ const Logo = styled.img`
     margin-top: 50px;
     margin-bottom: 50px;
 `
-
+console.log(props.passarMatchs)
     return (
         <BoxMatchs>
             <Logo src={logo}/>
             <Matchs>
-                <InfosPerfil>
-                    <FotoPerfil/>
-                    <NomePerfil>Ana Stinson</NomePerfil>
-                </InfosPerfil>
-
-                <Linha/>
+                {props.passarCarregandoMatchs ? 'Carregando seus matchs...' : 
+                    props.passarMatchs.length > 0 ? 
+                        props.passarMatchs.map(perfilMatch => {  return (  
+                        <div>
+                        <InfosPerfil>
+                            <FotoPerfil src={perfilMatch.photo}/>
+                            <NomePerfil>{perfilMatch.name}</NomePerfil>
+                        </InfosPerfil>
+                        <Linha/>    
+                        </div>)
+                    }) : <label>Poxa, você ainda não tem nenhum match. <br/> Mas, calma, os astros vão ter ajudar!</label>
+            
+            
+            }
             </Matchs>
-
         </BoxMatchs>
     );
   }

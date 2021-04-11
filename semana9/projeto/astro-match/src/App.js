@@ -4,9 +4,10 @@ import styled from 'styled-components'
 import { Matchs, Perfis } from './components';
 // import {Drawer} from 'antd'
 // import 'antd/dist/antd.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import chat from './imgs/chat.png'
 import reset from './imgs/reset.png'
+import axios from "axios";
 
 const DivPai = styled.div`
   display:flex;
@@ -36,6 +37,15 @@ const BotaoMatchs = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  :hover{
+    cursor: pointer;
+  }
+
+  @media(max-width: 1024px) {
+    width: 50px;
+    height: 50px;
+  }
 `
 
 const IconeMatchs = styled.img`
@@ -60,6 +70,15 @@ const BotaoLimpar = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  :hover{
+    cursor: pointer;
+  }
+
+  @media(max-width: 1024px) {
+    width: 50px;
+    height: 50px;
+  }
 `
 
 const IconeLimpar = styled.img`
@@ -69,20 +88,116 @@ const IconeLimpar = styled.img`
 function App() {
 
   const [visibilidadeMatchs, setVisibilidade] = useState(false)
+  const [perfis, setBuscarPerfis] = useState([]);
+  const [carregando, setCarregando] = useState(false);
+  const [carregandoMatchs, setCarregandoMatchs] = useState(false);
+  const [matchs, setMatchs] = useState([])
+
+  useEffect(() => {
+      BuscarPerfis();
+      RetornarMatchs()
+  }, []
+  )
 
   const abrirMatchs = () => {
     // visibilidadeMatchs ? setVisibilidade(false) : setVisibilidade(true)
     setVisibilidade(!visibilidadeMatchs)
   }
 
+  
+  const BuscarPerfis = () => {
+    setCarregando(true)
+    var config = {
+        method: 'get',
+        url: 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/milena-carvalho-cruz/person',
+        headers: { }
+        };
+    
+        axios(config)
+        .then(function (response) {
+            setBuscarPerfis(response.data.profile);
+            console.log(perfis)
+            setCarregando(false)
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+}
+
+  const EscolherPessoa = (escolha) => {
+    var data = JSON.stringify({
+    "id": perfis.id,
+    "choice": escolha
+    });
+
+    var config = {
+    method: 'post',
+    url: 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/milena-carvalho-cruz/choose-person',
+    headers: { 
+        'Content-Type': 'application/json'
+    },
+    data : data
+    };
+
+    axios(config)
+    .then(function (response) {
+        // console.log(response.data.isMatch)
+        // if(response.data.isMatch){
+        //     message.success('Isso é um Match!')
+        // } 
+        BuscarPerfis()
+        RetornarMatchs()
+    })
+    .catch(function (error) {
+    console.log(error);
+    });
+  }
+
+  const RetornarMatchs = () => {
+    setCarregandoMatchs(true)
+    var config = {
+      method: 'get',
+      url: 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/milena-carvalho-cruz/matches',
+      headers: { }
+    };
+
+    axios(config)
+    .then(function (response) {
+      setMatchs(response.data.matches)
+      console.log(matchs)
+    setCarregandoMatchs(false)
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+  const ResetarApi = () => {
+    var config = {
+      method: 'put',
+      url: 'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/milena-carvalho-cruz/clear',
+      headers: { }
+    };
+
+    axios(config)
+    .then(function (response) {
+      BuscarPerfis()
+      RetornarMatchs()
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+  }
+
 
   return (
     <DivPai>
-    <Matchs largura={visibilidadeMatchs}></Matchs>
+    <Matchs largura={visibilidadeMatchs} passarMatchs={matchs} passarCarregandoMatchs={carregandoMatchs}></Matchs>
     <CorFundo>
       <BotaoMatchs onClick={abrirMatchs}><IconeMatchs src={chat}/></BotaoMatchs>
-      <ContainerPerfis><Perfis/></ContainerPerfis>
-      <BotaoLimpar><IconeLimpar src={reset}/></BotaoLimpar>
+      <ContainerPerfis><Perfis passarPerfis={perfis} passarCarregando={carregando} passarBusca={BuscarPerfis} passarEscolha={EscolherPessoa}/></ContainerPerfis>
+      <BotaoLimpar onClick={ResetarApi}><IconeLimpar src={reset}/></BotaoLimpar>
     </CorFundo>
     </DivPai>
     
