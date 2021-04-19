@@ -88,8 +88,8 @@ function Login() {
     const RealizarLogin = () => {
         var axios = require('axios');
         var data = JSON.stringify({
-        "email": "milenacacaudecarvalho@gmail.com",
-        "password": "123456"
+        "email": inputEmail,
+        "password": inputSenha
         });
 
         var config = {

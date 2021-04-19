@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import styled from 'styled-components'
 import '../../components/antd.css'
 import { Secao, Container, Titulo, Input, CaixaDeTexto, CaixaBotao} from '../../components/estilosCompoentes'
-import marte from '../../imgs/home/marte.png'
+import galaxia from '../../imgs/home/galaxia.png'
 import calendario from '../../imgs/infosviagem/data.png'
 import pin from '../../imgs/infosviagem/local.png'
 import duracao from '../../imgs/infosviagem/duracao-preto.png'
@@ -19,7 +19,6 @@ const Coluna1 = styled.div`
     width: 65%;
     padding-right: 30px;
     text-align: right;
-    height: 70vh;
 `
 
 const Coluna2 = styled.div` 
@@ -47,10 +46,17 @@ const Descricao = styled.div`
 
 const Viagem = styled.div`
     width: 90%;
-    height: 30vh;
-    background-image: url(${marte});
+    height: 35vh;
+    background-color: black;
+    /* background-image: url(../../imgs/home/${(props)=> props.$imagem}.png); */
+    background-image: url(${galaxia});
+    background-size: cover;
     padding: 30px;
     position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: center;
     :hover{
         ${Descricao}{
             opacity: 1;
@@ -58,49 +64,68 @@ const Viagem = styled.div`
     }
 `
 
-const NomeViagem = styled.h4`
+const BoxInfos = styled.div` 
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+`
+
+const NomeViagem = styled.label`
     color: white;
     text-align: left;
-    font-size: 24px;
-    width: 65%;
+    font-size: 30px;
+    width: 80%;
     font-family: Lexend;
     font-weight: 400;
+    line-height: 40px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `
 
 const Linha = styled.hr`
-    width: 65%;
+    width: 100%;
     border: none;
     height: .5px;
     background-color: rgba(255,255,255,.42);
-    float: left;
+    margin-top: 20px;
 `
 
 const Flex = styled.div`
     display: flex;
     :nth-of-type(1){
-        margin-top: 10px;
+        margin-top: 6px;
     }
     align-items: center;
 `
 
 const Icone = styled.img`
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     object-position: bottom;
 `
 
 const Info = styled.label`
     color: ${(props) => props.$cor || 'white'};
     margin-left: 15px;
-    font-size: 16px;
+    font-size: 20px;
 `
 
-const DescricaoTexto = styled.p`
+const DescricaoTexto = styled.label`
     color: black;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 400;
     margin-top: 10px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `
 
 function Viagens() {
@@ -152,15 +177,17 @@ function Viagens() {
                     {carregandoViagens ? 'Buscando viagens disponíveis...' :
                         todasViagens.length > 0 ? 
                         <List
-                            grid={{ gutter: 1000, column: 2 }}
+                            grid={{column: 2 }}
                             dataSource={todasViagens}
                             pagination={{pageSize: 4}}
                             renderItem={viagem => (
-                                <Viagem>        
+                                <Viagem>    
+                                    <BoxInfos>    
                                     <NomeViagem $cor="white">{viagem.name}</NomeViagem>
                                     <Linha /><br />
                                     <Flex><Icone src={calendario} /><Info>{viagem.date}</Info></Flex><br />
                                     <Flex><Icone src={pin} /><Info>{viagem.planet}</Info></Flex>
+                                    </BoxInfos>
                                     <Descricao>
                                         <Flex><Icone src={duracao} /><Info $cor="black">{viagem.durationInDays} dias</Info></Flex>
                                         <DescricaoTexto>{viagem.description}</DescricaoTexto>
