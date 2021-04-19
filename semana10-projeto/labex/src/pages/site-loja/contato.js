@@ -31,9 +31,8 @@ const IconeSocial = styled.img`
     width: 25px;
     height: 25px;
     object-fit: cover;
-    opacity: .6;
     :hover{
-        opacity: 1;
+        opacity: .80;
         cursor: pointer;
     }
 ` 
@@ -48,7 +47,7 @@ function Contato() {
     
     return (
         <Secao>
-            <Container $display="flex" $flexflow="column" $alignitems="center" $justifycontent="center">
+            <Container id='contato' $display="flex" $paddingRight='10%' $flexFlow="column" $alignitems="center" $justifycontent="center">
                 <DivTitulo>
                     <div>
                         <Titulo $cor="white" $fontSize="72" $marginBottom="40px">fale</Titulo>

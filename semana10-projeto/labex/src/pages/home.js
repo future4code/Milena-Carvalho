@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
 import styled from 'styled-components'
-import {notification} from 'antd'
+import {notification, Tooltip,} from 'antd'
 import 'antd/dist/antd.css'
+import '../components/antd.css'
 
 import {
     Container,
@@ -66,7 +67,7 @@ const BotaoAcessos = styled.button`
 
 const BotaoInfo = styled.button`
     position: absolute;
-    bottom: 5vh;
+    bottom: 6vh;
     left: 5vw;
     background-color: transparent;
     outline: none;
@@ -77,29 +78,19 @@ const BotaoInfo = styled.button`
 const IconeInfo = styled.img`
     width: 40px;
     height: 40px;
+    opacity: .5;
+    :hover {
+        opacity: 1;
+    }
 `
 
 function Home() {
 
-    const openNotification = () => {
-        notification.open({
-          description:
-          'Está página existe somente para melhor organização da apresentação de um projeto fictício. Tendo em vista o desenvolvimento de um projeto real, o acesso ao painel admin seria feito por um link direto enquanto a página principal seria o site propriamente dito.',
-          className: 'custom-class',
-          style: {
-            width: 700,
-            fontFamily: 'Lexend',
-          },
-          placement: 'bottomRight',
-          duration: '12',
-
-        });
-      };
-
-    
+    const text = <span>Está página existe somente para melhor organização da apresentação de um projeto fictício. Tendo em vista o desenvolvimento de um projeto real, o acesso ao painel admin seria feito por um link direto enquanto a página principal seria o site propriamente dito.</span>;
+   
     return (
         <SecaoImagemFundo $imagem={Xpreto}>
-            <Container $display='flex' $flexflow='column' $alignitems='center' $justifycontent='center'>
+            <Container $display='flex' $flexFlow='column' $alignitems='center' $justifycontent='center'>
                 <Logo src={logo}/>
                 <DivBotoes>
                     <Link to='/admin/'> <BotaoAcessos>
@@ -119,7 +110,10 @@ function Home() {
                     </BotaoAcessos>
                     </Link>
                 </DivBotoes>
-                <BotaoInfo><IconeInfo src={info} onClick={openNotification}/> </BotaoInfo>
+                
+                <Tooltip placement="right" title={text}>
+                    <BotaoInfo><IconeInfo src={info}/></BotaoInfo>
+                </Tooltip>
             </Container>
         </SecaoImagemFundo>
     )

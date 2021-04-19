@@ -1,3 +1,7 @@
 *{
   font-family: 'Lexend', sans-serif;
 }
+
+body, html {
+  scroll-behavior: smooth;
+}

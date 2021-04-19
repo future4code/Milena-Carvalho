@@ -9,6 +9,8 @@ import {
 import Xpreto from '../../imgs/x-preto.png'
 import setaEsquerda from '../../imgs/login/seta-esquerda.png'
 import logo from '../../imgs/logo.png'
+import {useState, useEffect} from 'react'
+import {message} from 'antd'
 
 const BoxLogin = styled.div` 
     background-color: #1A1A1A;
@@ -63,10 +65,56 @@ const DivLogin = styled.div`
 `
 
 function Login() {
+
+    const [inputEmail, setInputEmail] = useState('')
+    const [inputSenha, setInputSenha] = useState('')
+
+    const onChangeInputEmail = (email) => {
+        setInputEmail(email.target.value)
+    }
+
+    const onChangeInputSenha = (senha) => {
+        setInputSenha(senha.target.value)
+    }
+
+    useEffect(() => {
+        if(localStorage.getItem('token')) {
+            window.location.href = '/admin/lista-viagens'
+        }
+    }, []
+    )
     
+
+    const RealizarLogin = () => {
+        var axios = require('axios');
+        var data = JSON.stringify({
+        "email": "milenacacaudecarvalho@gmail.com",
+        "password": "123456"
+        });
+
+        var config = {
+        method: 'post',
+        url: 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/milena-carvalho-cruz/login',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+
+        axios(config)
+        .then(function (response) {
+            localStorage.setItem('token', response.data.token)
+            window.location.href='/admin/lista-viagens'
+        })
+        .catch(function (error) {
+            message.error('Usuário ou senha incorretos')
+        });
+
+    }
+
     return (
         <SecaoImagemFundo $imagem={Xpreto}>
-            <Container $display='flex' $flexflow='column' $alignitems='center' $justifycontent='center'>
+            <Container $display='flex' $flexFlow='column' $alignitems='center' $justifycontent='center'>
                 <BoxLogin>
                     <DivBotaoVoltar>
                         <Link to=''>
@@ -79,10 +127,10 @@ function Login() {
                     <Logo src={logo}/>
                     
                     <DivLogin>
-                        <Input  placeholder="E-mail"></Input>
-                        <Input  placeholder="Senha"></Input>
+                        <Input type='email' onChange={onChangeInputEmail} placeholder="E-mail"></Input>
+                        <Input type='password' onChange={onChangeInputSenha} placeholder="Senha"></Input>
                         
-                        <Link to='/admin/lista-viagens' ><CaixaBotao $width='180px' >Efetuar login</CaixaBotao></Link>
+                        <CaixaBotao onClick={RealizarLogin} $width='180px' >Efetuar login</CaixaBotao>
                     </DivLogin>
                 </BoxLogin>
             </Container>

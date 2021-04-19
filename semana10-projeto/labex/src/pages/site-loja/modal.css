@@ -1,0 +1,81 @@
+
+.ant-modal{
+    padding-top: 50px;
+}
+
+.ant-modal-content{
+    background: #1A1A1A;
+    width: 100%;
+}
+.ant-modal-header{
+    display: none;
+}
+.ant-modal-footer{
+    display: none;
+}
+.anticon{
+    background: white;
+}
+
+/* GRID PROXIMAS VIAGENS */
+
+.ant-row {
+
+    row-gap: 50px!important;
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+}
+
+.ant-list {
+    width: 100%;
+}
+
+.anticon svg {
+    fill: #FEBE1D!important;
+}
+
+.anticon {
+    background: transparent!important;
+}
+
+.ant-pagination {
+    display: flex!important;
+    /* margin-right: 5vh!important; */
+}
+
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+    background:transparent!important;
+    border: none;
+}
+
+/* .ant-pagination-disabled {
+    border: 1px rgba(247, 247, 247, 0.9)!important;
+} */
+
+.ant-pagination-disabled .ant-pagination-item-link, .ant-pagination-disabled:hover .ant-pagination-item-link, .ant-pagination-disabled:focus-visible .ant-pagination-item-link {
+
+    opacity: 0.3!important;
+}
+
+
+.ant-pagination-item {
+    border: none!important;
+    background-color: transparent!important;
+    opacity: 0.4!important;
+}
+
+.ant-pagination-item-active {
+    color: black!important;
+    opacity: 1!important;
+    /* background-color: white!important; */
+    border-bottom: 1px solid #FEBE1D!important;
+    opacity: 1!important;
+}
+
+.ant-pagination-item a {
+    color: white!important;
+} 
+
+/* .ant-pagination-item-active a {
+    color: black!important;
+} */

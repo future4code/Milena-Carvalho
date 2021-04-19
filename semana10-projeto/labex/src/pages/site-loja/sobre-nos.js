@@ -10,13 +10,12 @@ const DivTitulo = styled.div`
     margin-bottom: 20px;
 `
 const Coluna1 = styled.div`
-    flex: 1;
     padding-right: 30px;
     text-align: right;
 `
 
 const Coluna2 = styled.div`
-    flex: 3;
+    flex: 1;
     padding-left: 30px;
     display: flex;
     flex-flow: column;
@@ -36,16 +35,16 @@ const Creditos = styled.label`
 const TextoSobreNos = styled.label` 
     color: #BBBBBB;
     font-size: 20px;
-    width: 400px;
+    width: 450px;
 `
 
 function SobreNos() {
     
     return (
-        <SecaoImagemFundo $imagem={Xamarelo}>
+        <SecaoImagemFundo id='sobre-nos' $imagem={Xamarelo}>
             <Container $display="flex" $alignitems="center" $justifycontent="center">
                 <Coluna1>
-                    <Citacao>"O destino do homem é ir a outro planeta"</Citacao>
+                    <Citacao>"O destino do homem é <br/>ir a outro planeta"</Citacao>
                     <br/>
                     <Creditos>(Charles Bolden, NASA)</Creditos>
                 </Coluna1>

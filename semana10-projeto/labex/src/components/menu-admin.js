@@ -34,6 +34,12 @@ const BotoesMenu = styled.div`
 `
 
 function MenuAdmin() {
+
+    const LogOut = () => {
+        localStorage.removeItem('token')
+        window.location.href='/'
+    }
+
     return(
         <BoxAmarelo>
             <SimboloLogo src={simbolo}/>
@@ -43,7 +49,7 @@ function MenuAdmin() {
                 <Link to='/admin/nova-viagem'><IconeBotao $icone={mais} $iconeHover={maisHover}></IconeBotao></Link>
             </BotoesMenu>
 
-            <IconeBotao $icone={sair} $iconeHover={sairHover}></IconeBotao>
+            <IconeBotao onClick={LogOut} $icone={sair} $iconeHover={sairHover}></IconeBotao>
 
         </BoxAmarelo>
     )
